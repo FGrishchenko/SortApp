@@ -5,12 +5,20 @@
         public static void ShowSortedArrayWithTime<T>(Func<T> action, int[] arr, Label someLabel)
         {
             someLabel.Text = string.Empty;
+            someLabel.AutoSize = true;
             var time = action();
-            foreach (var item in arr)
+            if (arr.Length <= 50)
             {
-                someLabel.Text += item.ToString() + "   ";
+                foreach (var item in arr)
+                {
+                    someLabel.Text += $"{item}   ";
+                }
+                someLabel.Text += $"\n{time}";
             }
-            someLabel.Text += $"\n{time}";
+            else
+            {
+                someLabel.Text += $"\n{time}";
+            }
         }
 
         public static void InitAndShowArray(out int[] arr, Label labelForPrint, TextBox textBoxForLength, Random random)
@@ -22,9 +30,16 @@
                 arr[i] = random.Next(30);
             }
 
-            foreach (var item in arr)
+            if (arr.Length <= 50)
             {
-                labelForPrint.Text += item.ToString() + "   ";
+                foreach (var item in arr)
+                {
+                    labelForPrint.Text += $"{item}   ";
+                }
+            }
+            else
+            {
+                labelForPrint.Text += $"\nTo view an array, please enter an array length less than 50 or 50\n";
             }
         }
     }

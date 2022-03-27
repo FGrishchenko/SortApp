@@ -10,7 +10,7 @@ namespace testApp.Utilitites
             StartTime.Start();
             doSomething.Invoke();
             StartTime.Stop();
-            return "Run time --> " + StartTime.Elapsed;
+            return $"Run time --> {StartTime.Elapsed}";
         }
     }
 }
