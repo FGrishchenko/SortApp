@@ -18,31 +18,32 @@ namespace testApp
 
         private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            ShowUtils.InitAndShowArray(out arr, materialLabel2, textBox1, random);
+            ArrayUtils.InitArray(out arr, textBox1, random);
+            ShowUtils.ShowArray(arr, materialLabel2);
         }
 
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             ShellSort ShellSort = new ShellSort();
-            ShowUtils.ShowSortedArrayWithTime(() => TimeUtils.SortAndGetTime(() => ShellSort.SortArray(arr), StartTime), arr, materialLabel3);
+            ShowUtils.ShowSortedArrayWithTime(() => TimeUtils.DoSomethingAndGetTime(() => ShellSort.SortArray(arr), StartTime), arr, materialLabel3);
         }
 
         private void materialFlatButton3_Click(object sender, EventArgs e)
         {
             SortingBySimpleSelection SortingBySimpleSelection = new SortingBySimpleSelection();
-            ShowUtils.ShowSortedArrayWithTime(() => TimeUtils.SortAndGetTime(() => SortingBySimpleSelection.SortArray(arr), StartTime), arr, materialLabel4);
+            ShowUtils.ShowSortedArrayWithTime(() => TimeUtils.DoSomethingAndGetTime(() => SortingBySimpleSelection.SortArray(arr), StartTime), arr, materialLabel4);
         }
 
         private void materialFlatButton4_Click(object sender, EventArgs e)
         {
             MergeSort MergeSort = new MergeSort();
-            ShowUtils.ShowSortedArrayWithTime(() => TimeUtils.SortAndGetTime(() => MergeSort.SortArray(arr), StartTime), arr, materialLabel5);
+            ShowUtils.ShowSortedArrayWithTime(() => TimeUtils.DoSomethingAndGetTime(() => MergeSort.SortArray(arr), StartTime), arr, materialLabel5);
         }
 
         private void materialFlatButton5_Click(object sender, EventArgs e)
         {
             QuickSort QuickSort = new QuickSort();
-            ShowUtils.ShowSortedArrayWithTime(() => TimeUtils.SortAndGetTime(() => QuickSort.SortArray(arr), StartTime), arr, materialLabel6);
+            ShowUtils.ShowSortedArrayWithTime(() => TimeUtils.DoSomethingAndGetTime(() => QuickSort.SortArray(arr), StartTime), arr, materialLabel6);
         }
     }
 }

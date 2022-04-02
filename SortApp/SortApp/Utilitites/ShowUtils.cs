@@ -21,15 +21,9 @@
             }
         }
 
-        public static void InitAndShowArray(out int[] arr, Label labelForPrint, TextBox textBoxForLength, Random random)
+        public static void ShowArray(int[] arr, Label labelForPrint)
         {
             labelForPrint.Text = string.Empty;
-            arr = new int[int.Parse(textBoxForLength.Text)];
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = random.Next(30);
-            }
-
             if (arr.Length <= 50)
             {
                 foreach (var item in arr)

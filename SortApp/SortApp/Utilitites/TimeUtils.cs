@@ -4,7 +4,7 @@ namespace testApp.Utilitites
 {
     public static class TimeUtils
     {
-        public static string SortAndGetTime(Action doSomething, Stopwatch StartTime)
+        public static string DoSomethingAndGetTime(Action doSomething, Stopwatch StartTime)
         {
             StartTime.Restart();
             StartTime.Start();
